@@ -1,0 +1,216 @@
+/* ================= BASE ================= */
+:root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #1a1d23;
+    --subtext: #6b7280;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --border: #e5e7eb;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+body.dark {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #808080; /* corrigido */
+    --subtext: #94a3b8;
+    --primary: #6366f1;
+    --primary-hover: #818cf8;
+    --border: #334155;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+}
+
+/* ================= CARDS ================= */
+.container {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    width: 100%;
+}
+
+/* remove limite antigo */
+.container {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* ================= TIPOGRAFIA ================= */
+h2 {
+    margin-top: 0;
+}
+
+/* ================= FORM ================= */
+input,
+textarea,
+select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    outline: none;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary);
+}
+
+/* textarea melhorado */
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* ================= BOTÕES ================= */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+/* ================= STATUS ================= */
+.status {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ================= IMAGEM ================= */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* ================= POSTS ================= */
+#lista {
+    display: grid;
+    gap: 15px;
+}
+
+#lista div {
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 12px;
+    background: transparent;
+}
+
+/* botões dentro do post */
+#lista button {
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 13px;
+}
+
+#lista button:last-child {
+    background: #ef4444;
+}
+
+#lista button:last-child:hover {
+    background: #dc2626;
+}
+
+/* ================= TOGGLE ================= */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+/* 📱 MOBILE pequeno */
+@media (max-width: 480px) {
+    .dashboard {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    input, textarea, select {
+        font-size: 13px;
+    }
+}
+
+/* 📲 TABLET */
+@media (min-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* 💻 DESKTOP */
+@media (min-width: 1024px) {
+    .dashboard {
+        grid-template-columns: 380px 1fr;
+        align-items: start;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    /* formulário fixo */
+    .form-container {
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+    }
+
+    /* posts mais organizados */
+    #lista {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* 🖥️ TELAS MUITO GRANDES */
+@media (min-width: 1400px) {
+    #lista {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

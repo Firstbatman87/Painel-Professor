@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Professor</title>
+    <link rel="shortcut icon"
+        href="data:image/png;base64,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"
+        type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <div class="container form-container">
+            <div class="container">
+                <h2>Nova Atividade</h2>
+
+                <input id="titulo" placeholder="Título">
+
+                <textarea id="descricao" placeholder="Descrição"></textarea>
+
+                <input id="foto" placeholder="URL da imagem (opcional)" oninput="preview()">
+
+                <small style="display:block; margin-top:5px; color:#6b7280;">
+                    ⚠️ A imagem precisa ser um link direto (.jpg, .png).
+                    Se não souber como fazer:
+                    👉 <a href="https://postimages.org/" target="_blank">
+                        Enviar imagem no Postimages
+                    </a>
+                    Pegue o link direto.
+                </small>
+
+                <img id="preview" style="display:none;">
+
+                <select id="categoria">
+                    <option>Aviso</option>
+                    <option>Tarefa</option>
+                    <option>Prova</option>
+                </select>
+
+                <select id="turma">
+                    <option>2A</option>
+                    <option>2B</option>
+                    <option>2C</option>
+                </select>
+
+                <input id="professor" placeholder="Professor">
+
+                <select id="disciplina">
+                    <option>Português</option>
+                    <option>Matemática</option>
+                    <option>Física</option>
+                    <option>Química</option>
+                    <option>Biologia</option>
+                    <option>História</option>
+                    <option>Geografia</option>
+                    <option>Filosofia</option>
+                    <option>Sociologia</option>
+                    <option>Inglês</option>
+                    <option>Artes</option>
+                    <option>Educação Física</option>
+                </select>
+
+                <h5>Data de entrega</h5>
+                <input type="date" id="dataEntrega">
+
+                <button onclick="criar()">Publicar</button>
+                <div id="status" class="status"></div>
+            </div>
+        </div>
+
+        <div class="container posts-container">
+            <div class="container">
+                <h2>Posts</h2>
+                <div id="lista"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
